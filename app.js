@@ -15,9 +15,10 @@ app.use(express.json());
 const port = 3000;
 
 
-async function connect() {
+async function connect(dbUrl) {
   try {
-    await mongoose.connect("mongodb://127.0.0.1:27017/demo_typescript");
+    // await mongoose.connect("mongodb://127.0.0.1:27017/demo_typescript");
+    await mongoose.connect(dbUrl)
     console.log("Connect successfully!!!");
   } catch (error) {
     console.log("Connect failure!!!");
